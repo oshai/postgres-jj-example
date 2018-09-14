@@ -31,6 +31,7 @@ fun main(args: Array<String>) {
                 logger.info("--- connection STOPPED!")
             }
             .start(7000)
+
     app.get("/") { ctx ->
         ctx.result(connection.sendPreparedStatement("select 0"))
     }

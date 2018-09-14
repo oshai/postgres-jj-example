@@ -9,23 +9,19 @@ import mu.KotlinLogging
 private val logger = KotlinLogging.logger {}
 
 fun main(args: Array<String>) {
-  //just to make sure which log level is active
-  logger.error("starting")
-  logger.warn("starting warn")
-  logger.info("starting info")
-  logger.debug("starting debug")
-  logger.trace("starting trace")
+  logger.info("starting")
+
   val connection: Connection = PostgreSQLConnection(
       Configuration(
           username = "username",
           password = "password",
           host = "host.com",
-          port = 3306,
+          port = 5432,
           database = "schema"
       )
   )
   connection.connect().get()
-  val future = connection.sendPreparedStatement("select * from table limit 2")
+  val future = connection.sendPreparedStatement("select 0")
   val queryResult = future.get()
   println((queryResult.rows!![0] as ArrayRowData).columns.toList())
   println((queryResult.rows!![1] as ArrayRowData).columns.toList())

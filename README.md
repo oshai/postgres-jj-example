@@ -1,4 +1,4 @@
 # jasync-postgresql-example
 Example project for working with postgresql driver.  
 
-See more details on [jasync-sql](https://github.com/jasync-sql/jasync-sql).
+The example uses [jasync-sql](https://github.com/jasync-sql/jasync-sql) and [javalin](https://github.com/tipsy/javalin).
